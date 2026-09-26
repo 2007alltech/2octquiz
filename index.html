@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gandhi &amp; Shastri — Lives &amp; Legacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep: #10263B;
+    --navy: #17324A;
+    --navy-card: #1E3E58;
+    --navy-card-hi: #274A67;
+    --cream: #F3ECDC;
+    --cream-dim: #C9C2AE;
+    --saffron: #DC8A2E;
+    --saffron-hi: #EFA84C;
+    --green: #4C8065;
+    --red: #C1573F;
+    --hairline: rgba(243,236,220,0.14);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background: var(--navy-deep);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  h1,h2,h3,h4{
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    margin: 0 0 0.4em 0;
+    color: var(--cream);
+  }
+  a{color: var(--saffron-hi);}
+
+  header.top{
+    padding: 2.6rem 1.5rem 1.6rem;
+    text-align: center;
+    border-bottom: 1px solid var(--hairline);
+    background:
+      radial-gradient(ellipse at 20% -20%, rgba(220,138,46,0.12), transparent 55%),
+      radial-gradient(ellipse at 85% -30%, rgba(76,128,101,0.14), transparent 50%);
+  }
+  header.top .eyebrow{
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--cream-dim);
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+  header.top h1{
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    letter-spacing: 0.2px;
+  }
+  header.top .sub{
+    color: var(--cream-dim);
+    max-width: 50ch;
+    margin: 0.6rem auto 0;
+    font-size: 0.98rem;
+  }
+  .tricolor-rule{
+    height: 3px;
+    width: 92px;
+    margin: 1.1rem auto 0;
+    background: linear-gradient(90deg, var(--saffron) 0 33%, var(--cream) 33% 66%, var(--green) 66% 100%);
+    border-radius: 2px;
+  }
+
+  nav.tabs{
+    display:flex;
+    justify-content:center;
+    gap: 0.5rem;
+    padding: 1.1rem 1rem 0;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  nav.tabs button{
+    flex:1;
+    max-width: 220px;
+    padding: 0.7rem 1rem;
+    background: transparent;
+    border: 1px solid var(--hairline);
+    color: var(--cream-dim);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+  nav.tabs button.active{
+    color: var(--navy-deep);
+    background: var(--cream);
+    border-color: var(--cream);
+  }
+  nav.tabs button:not(.active):hover{
+    color: var(--cream);
+    border-color: var(--cream-dim);
+  }
+
+  main{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.8rem 1.4rem 4rem;
+  }
+  section.view{ display:none; }
+  section.view.active{ display:block; }
+
+  /* ---- Read section ---- */
+  .figure-card{
+    background: var(--navy-card);
+    border: 1px solid var(--hairline);
+    border-radius: 10px;
+    margin-bottom: 1.6rem;
+    overflow: hidden;
+  }
+  .figure-card .fc-head{
+    padding: 1.2rem 1.4rem;
+    border-bottom: 1px solid var(--hairline);
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .figure-card .fc-head h2{ font-size: 1.35rem; margin:0; }
+  .figure-card .fc-head .years{
+    color: var(--saffron-hi);
+    font-size: 0.88rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .figure-card .fc-body{ padding: 1.2rem 1.4rem 1.4rem; }
+  .figure-card .lede{
+    color: var(--cream);
+    font-size: 1rem;
+    margin-bottom: 1.1rem;
+  }
+  .quickfacts{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 1rem;
+    background: rgba(0,0,0,0.14);
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.86rem;
+  }
+  .quickfacts div span.k{ color: var(--cream-dim); display:block; font-size: 0.76rem; }
+  .quickfacts div span.v{ color: var(--cream); font-weight: 600; }
+
+  h4.section-head{
+    font-size: 0.95rem;
+    color: var(--saffron-hi);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin: 1.3rem 0 0.6rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--hairline);
+  }
+  h4.section-head:first-of-type{ border-top: none; padding-top: 0; margin-top: 0; }
+
+  .timeline{
+    list-style:none;
+    margin: 0 0 0.4rem 0;
+    padding: 0;
+    border-left: 2px solid var(--hairline);
+  }
+  .timeline li{
+    position: relative;
+    padding: 0 0 0.9rem 1.2rem;
+    font-size: 0.94rem;
+    color: var(--cream-dim);
+  }
+  .timeline li::before{
+    content:'';
+    position:absolute;
+    left: -5px;
+    top: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--saffron);
+  }
+  .timeline li:last-child{ padding-bottom: 0; }
+  .timeline li b{ color: var(--cream); font-weight: 600; }
+
+  .plain-list{
+    margin: 0 0 0.4rem 0;
+    padding-left: 1.2rem;
+    color: var(--cream-dim);
+    font-size: 0.94rem;
+  }
+  .plain-list li{ margin-bottom: 0.5rem; }
+  .plain-list li b{ color: var(--cream); }
+
+  .legacy-line{
+    border-top: 1px solid var(--hairline);
+    padding-top: 1rem;
+    margin-top: 1.2rem;
+    font-size: 0.94rem;
+    color: var(--cream-dim);
+  }
+  .legacy-line b{ color: var(--cream); }
+
+  /* ---- Quiz section ---- */
+  .quiz-intro{
+    background: var(--navy-card);
+    border: 1px solid var(--hairline);
+    border-radius: 10px;
+    padding: 1.4rem;
+    margin-bottom: 1.6rem;
+  }
+  .level-row{
+    display:flex;
+    gap: 0.7rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .level-pill{
+    flex:1;
+    min-width: 140px;
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    padding: 0.8rem 0.9rem;
+    text-align:center;
+    font-size: 0.88rem;
+  }
+  .level-pill .lp-name{ font-weight:700; color: var(--cream); margin-bottom: 0.2rem; }
+  .level-pill .lp-status{ color: var(--cream-dim); font-size:0.82rem; }
+  .level-pill.done{ border-color: var(--green); background: rgba(76,128,101,0.12); }
+  .level-pill.current{ border-color: var(--saffron); background: rgba(220,138,46,0.1); }
+
+  button.primary{
+    background: var(--saffron);
+    color: #1A1200;
+    border: none;
+    font-family:'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.96rem;
+    padding: 0.75rem 1.4rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  button.primary:hover{ background: var(--saffron-hi); }
+  button.primary:active{ transform: translateY(1px); }
+  button.primary:disabled{ opacity:0.45; cursor:not-allowed; }
+  button.ghost{
+    background: transparent;
+    border: 1px solid var(--hairline);
+    color: var(--cream);
+    font-family:'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.65rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  button.ghost:hover{ border-color: var(--cream-dim); }
+
+  .quiz-header{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-bottom: 1.1rem;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    position: sticky;
+    top: 0;
+    background: var(--navy-deep);
+    padding: 0.5rem 0;
+    z-index: 5;
+  }
+  .quiz-header .qh-level{ font-family:'Lora', serif; font-size: 1.2rem; }
+  .progress-track{
+    width: 100%;
+    height: 6px;
+    background: var(--navy-card-hi);
+    border-radius: 4px;
+    overflow:hidden;
+    margin-bottom: 1.5rem;
+  }
+  .progress-fill{
+    height:100%;
+    background: linear-gradient(90deg, var(--saffron), var(--green));
+    border-radius: 4px;
+    transition: width 0.25s ease;
+  }
+
+  .q-card{
+    background: var(--navy-card);
+    border: 1px solid var(--hairline);
+    border-radius: 10px;
+    padding: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .q-card .q-meta{
+    color: var(--cream-dim);
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .q-card .q-text{
+    font-size: 1.06rem;
+    margin-bottom: 1rem;
+    color: var(--cream);
+  }
+  .options{
+    display:flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .opt{
+    display:flex;
+    align-items:flex-start;
+    gap: 0.7rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    cursor:pointer;
+    font-size: 0.95rem;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .opt:hover{ border-color: var(--cream-dim); }
+  .opt.selected{ border-color: var(--saffron); background: rgba(220,138,46,0.1); }
+  .opt .opt-letter{
+    flex-shrink:0;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--hairline);
+    display:flex; align-items:center; justify-content:center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--cream-dim);
+  }
+  .opt.selected .opt-letter{ border-color: var(--saffron); color: var(--saffron-hi); }
+  .opt.correct{ border-color: var(--green); background: rgba(76,128,101,0.16); }
+  .opt.correct .opt-letter{ border-color: var(--green); color: #9CCBA9; background: rgba(76,128,101,0.25); }
+  .opt.incorrect{ border-color: var(--red); background: rgba(193,87,63,0.14); }
+  .opt.incorrect .opt-letter{ border-color: var(--red); color: #E8A493; }
+  .opt.disabled{ cursor: default; }
+
+  .explain{
+    margin-top: 0.9rem;
+    padding: 0.85rem 1rem;
+    border-left: 3px solid var(--saffron);
+    background: rgba(220,138,46,0.07);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.9rem;
+    color: var(--cream-dim);
+    display:none;
+  }
+  .explain.show{ display:block; }
+  .explain b{ color: var(--cream); }
+
+  .quiz-actions{
+    display:flex;
+    justify-content: flex-end;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
+  }
+
+  .results-card{
+    background: var(--navy-card);
+    border: 1px solid var(--hairline);
+    border-radius: 10px;
+    padding: 2rem 1.6rem;
+    text-align:center;
+  }
+  .score-big{
+    font-family:'Lora', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--saffron-hi);
+    line-height:1;
+    margin: 0.4rem 0 0.2rem;
+  }
+  .score-label{ color: var(--cream-dim); font-size: 0.92rem; }
+  .verdict{ margin-top: 1rem; font-size: 1.05rem; color: var(--cream); }
+  .results-actions{
+    display:flex;
+    justify-content:center;
+    gap: 0.8rem;
+    margin-top: 1.6rem;
+    flex-wrap: wrap;
+  }
+  .missed-list{
+    text-align:left;
+    margin-top: 1.4rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--hairline);
+    display:none;
+  }
+  .missed-list.show{ display:block; }
+  .missed-list h4{ font-size: 0.9rem; color: var(--saffron-hi); margin-bottom: 0.7rem; }
+  .missed-item{
+    font-size: 0.86rem;
+    color: var(--cream-dim);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .missed-item:last-child{ border-bottom:none; }
+  .missed-item b{ color: var(--cream); }
+
+  footer{
+    text-align:center;
+    color: var(--cream-dim);
+    font-size: 0.82rem;
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  @media (max-width: 480px){
+    .figure-card .fc-head{ flex-direction:column; align-items:flex-start; gap:0.2rem; }
+    .level-row{ flex-direction:column; }
+    .quickfacts{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="eyebrow">Read. Understand. Test yourself.</div>
+  <h1>Gandhi &amp; Shastri</h1>
+  <p class="sub">A complete, efficient read on the lives and contributions of Mahatma Gandhi and Lal Bahadur Shastri — followed by a 170-question quiz across five rounds of rising difficulty.</p>
+  <div class="tricolor-rule"></div>
+</header>
+
+<nav class="tabs">
+  <button id="tab-read" class="active" onclick="showView('read')">Read</button>
+  <button id="tab-quiz" onclick="showView('quiz')">Quiz</button>
+</nav>
+
+<main>
+
+  <!-- ================= READ VIEW ================= -->
+  <section id="view-read" class="view active">
+
+    <div class="figure-card">
+      <div class="fc-head">
+        <h2>Mohandas Karamchand Gandhi</h2>
+        <span class="years">1869 – 1948</span>
+      </div>
+      <div class="fc-body">
+        <p class="lede">Known as <b>Bapu</b> and later given the title <b>Father of the Nation</b>, Gandhi led India's freedom struggle through <i>satyagraha</i> — resistance to injustice through truth and non-violence rather than force.</p>
+
+        <div class="quickfacts">
+          <div><span class="k">Born</span><span class="v">2 Oct 1869, Porbandar, Gujarat</span></div>
+          <div><span class="k">Parents</span><span class="v">Karamchand &amp; Putlibai Gandhi</span></div>
+          <div><span class="k">Wife</span><span class="v">Kasturba Gandhi (m. age 13)</span></div>
+          <div><span class="k">Died</span><span class="v">30 Jan 1948, New Delhi</span></div>
+        </div>
+
+        <h4 class="section-head">Early life &amp; South Africa (1869–1915)</h4>
+        <ul class="timeline">
+          <li><b>1888:</b> Sailed to London at 18 to study law at the Inner Temple; called to the Bar in 1891.</li>
+          <li><b>1893:</b> Travelled to South Africa for a legal case with the firm Dada Abdulla &amp; Co. Was thrown off a first-class train carriage at Pietermaritzburg for refusing to move to third class — a turning point in his thinking on injustice.</li>
+          <li><b>1894:</b> Founded the <b>Natal Indian Congress</b> to organise Indians against discriminatory laws.</li>
+          <li><b>1904:</b> Established the <b>Phoenix Settlement</b> near Durban, and started the newspaper <i>Indian Opinion</i>.</li>
+          <li><b>1906:</b> First used the term and method of <b>satyagraha</b> (truth-force) to resist the Transvaal Asiatic Registration Act.</li>
+          <li><b>1910:</b> Set up <b>Tolstoy Farm</b> as a cooperative home for satyagrahis and their families.</li>
+          <li><b>1915:</b> Returned to India after roughly 21 years abroad, guided in Indian politics by his mentor <b>Gopal Krishna Gokhale</b>.</li>
+        </ul>
+
+        <h4 class="section-head">Leading the freedom movement in India (1915–1942)</h4>
+        <ul class="timeline">
+          <li><b>1917:</b> Founded <b>Sabarmati Ashram</b> near Ahmedabad; led the <b>Champaran Satyagraha</b> in Bihar, his first in India, on behalf of indigo farmers forced to grow the crop under the exploitative tinkathia system.</li>
+          <li><b>1918:</b> Led the <b>Kheda Satyagraha</b> in Gujarat for tax relief after crop failure, and supported Ahmedabad's mill workers in a labour dispute, undertaking his first hunger strike.</li>
+          <li><b>1919–1924:</b> Backed the <b>Khilafat Movement</b>, building Hindu-Muslim unity against British policy, in the shadow of the 1919 Jallianwala Bagh massacre.</li>
+          <li><b>1920–1922:</b> Led the <b>Non-Cooperation Movement</b>, urging Indians to boycott British schools, courts, titles and foreign cloth. Called it off after the <b>Chauri Chaura incident</b> (Feb 1922), where a mob killed policemen.</li>
+          <li><b>1930:</b> Led the <b>Dandi March (Salt March)</b> — about 390 km on foot over 24 days from Sabarmati Ashram to the coastal village of Dandi — to make salt in defiance of the British salt tax.</li>
+          <li><b>1931:</b> Attended the Second Round Table Conference in London as the sole Congress representative.</li>
+          <li><b>1932:</b> Signed the <b>Poona Pact</b> with B. R. Ambedkar after a fast against separate electorates for the "depressed classes," whom he called <b>Harijans</b>.</li>
+          <li><b>1940–41:</b> Led a limited <b>Individual Satyagraha</b>, with Vinoba Bhave chosen as the first satyagrahi.</li>
+          <li><b>1942:</b> Launched the <b>Quit India Movement</b> on 8 August with the call "Do or Die," demanding an immediate end to British rule. Was jailed at the Aga Khan Palace, Pune, where his wife Kasturba died in 1944.</li>
+        </ul>
+
+        <h4 class="section-head">Final years, philosophy &amp; death</h4>
+        <ul class="timeline">
+          <li><b>1944:</b> Held talks with Muhammad Ali Jinnah on Hindu-Muslim unity as the demand for Pakistan grew.</li>
+          <li><b>1947:</b> Opposed but ultimately accepted the Partition of India; worked to calm communal violence in Calcutta and Delhi through fasts and prayer meetings.</li>
+          <li><b>30 January 1948:</b> Shot three times and killed at a prayer meeting at Birla House, New Delhi, by <b>Nathuram Godse</b>, a Hindu nationalist opposed to his conciliatory stance toward Muslims.</li>
+        </ul>
+        <ul class="plain-list">
+          <li><b>Philosophy:</b> Satyagraha (truth-force), Ahimsa (non-violence), Swaraj (self-rule), Swadeshi (economic self-reliance, symbolised by hand-spun khadi cloth), and Sarvodaya (welfare of all).</li>
+          <li><b>Writings:</b> <i>Hind Swaraj</i> (1909) and his autobiography, <i>The Story of My Experiments with Truth</i>; also edited <i>Young India</i>, <i>Navajivan</i> and <i>Harijan</i>.</li>
+          <li><b>Recognition:</b> Given the title "Mahatma" (Great Soul) by Rabindranath Tagore; nominated for the Nobel Peace Prize five times but never awarded it. 2 October is marked worldwide as the International Day of Non-Violence.</li>
+        </ul>
+
+        <div class="legacy-line"><b>Legacy:</b> Gandhi's insistence that means matter as much as ends shaped India's path to independence in 1947 and influenced later civil rights leaders worldwide, including Martin Luther King Jr.</div>
+      </div>
+    </div>
+
+    <div class="figure-card">
+      <div class="fc-head">
+        <h2>Lal Bahadur Shastri</h2>
+        <span class="years">1904 – 1966</span>
+      </div>
+      <div class="fc-body">
+        <p class="lede">India's second Prime Minister, Shastri is remembered for quiet, principled leadership — a man of modest means who held the country steady through war and hardship.</p>
+
+        <div class="quickfacts">
+          <div><span class="k">Born</span><span class="v">2 Oct 1904, Mughalsarai, UP</span></div>
+          <div><span class="k">Parents</span><span class="v">Sharada Prasad Srivastava &amp; Ramdulari Devi</span></div>
+          <div><span class="k">Wife</span><span class="v">Lalita Devi (m. 1928)</span></div>
+          <div><span class="k">Died</span><span class="v">11 Jan 1966, Tashkent, USSR</span></div>
+        </div>
+
+        <h4 class="section-head">Early life</h4>
+        <ul class="timeline">
+          <li>Born to a schoolteacher-turned-clerk father who died when Shastri was still an infant; raised by his mother and maternal grandfather.</li>
+          <li>Studied at Harish Chandra High School, Varanasi, then at the nationalist <b>Kashi Vidyapith</b>, which awarded him the title <b>"Shastri"</b> (meaning "scholar") in the mid-1920s — a title, not a family name.</li>
+          <li>While working for the upliftment of Harijans at Muzaffarpur, he deliberately dropped his caste-derived surname, <b>Srivastava</b>.</li>
+          <li>Inspired at 16 by Gandhi and Madan Mohan Malaviya's call to join the <b>Non-Cooperation Movement</b> in 1921, leaving school to take part.</li>
+        </ul>
+
+        <h4 class="section-head">Freedom movement &amp; early political career</h4>
+        <ul class="timeline">
+          <li>Became president of the <b>Servants of the People Society</b>, founded by Lala Lajpat Rai, and joined the Indian National Congress in 1928.</li>
+          <li>Took part in the 1930 Salt Satyagraha, the Individual Satyagraha, and the 1942 Quit India Movement, spending a total of about nine years in British jails across these movements.</li>
+          <li>After independence, served in the Uttar Pradesh government as Minister of Police and Transport, introducing measures such as using water jets instead of lathi-charges to control crowds, and appointing the state's first women bus conductors.</li>
+          <li>Served as General Secretary of the All India Congress Committee, helping organise the party's campaign for the 1952 general elections.</li>
+        </ul>
+
+        <h4 class="section-head">Union minister under Nehru (1951–1964)</h4>
+        <ul class="timeline">
+          <li><b>Railway Minister (1951–1956):</b> After the September 1956 Mahbubnagar train accident, he offered his resignation, which Nehru refused. Following the Ariyalur train accident of 23 November 1956, he offered it again — this time accepting moral and constitutional responsibility though not personally at fault — and Nehru accepted it on 7 December 1956, calling it an example of "constitutional propriety."</li>
+          <li><b>1957:</b> Returned to the cabinet as Minister without Portfolio, later holding Transport &amp; Communications and Commerce &amp; Industry.</li>
+          <li><b>Home Minister (1961–1963):</b> India's sixth Home Minister, before Nehru brought him back as Minister without Portfolio shortly before his own death.</li>
+        </ul>
+
+        <h4 class="section-head">Prime Minister (1964–1966)</h4>
+        <ul class="timeline">
+          <li>Became <b>Prime Minister on 9 June 1964</b>, following Jawaharlal Nehru's death on 27 May 1964, at a time of economic strain and food shortages.</li>
+          <li>Promoted the <b>White Revolution</b>, backing Verghese Kurien's Amul milk cooperative model and the creation of the National Dairy Development Board.</li>
+          <li>Laid the groundwork for the <b>Green Revolution</b>, supporting high-yield seed varieties with Agriculture Minister C. Subramaniam to push India toward food self-sufficiency.</li>
+          <li><b>1965 Indo-Pakistani War:</b> Led India through the August–September 1965 war with Pakistan, giving the country its enduring slogan, <b>"Jai Jawan, Jai Kisan"</b> ("Hail the Soldier, Hail the Farmer"), honouring both defenders and food producers. He also asked citizens to skip an evening meal on Mondays to conserve foodgrain.</li>
+          <li><b>10 January 1966, Tashkent:</b> Signed the <b>Tashkent Agreement</b> with Pakistan's President Ayub Khan, mediated by Soviet Premier Alexei Kosygin, to formally end the war.</li>
+          <li><b>11 January 1966:</b> Died in Tashkent, hours after signing the agreement; the official cause recorded was a heart attack.</li>
+        </ul>
+        <ul class="plain-list">
+          <li><b>Honour:</b> Awarded the <b>Bharat Ratna</b>, India's highest civilian award, posthumously in 1966 — the first Prime Minister to receive it after death.</li>
+          <li><b>Memorial:</b> Cremated on the banks of the Yamuna in Delhi at a site now known as <b>Vijay Ghat</b>.</li>
+        </ul>
+
+        <div class="legacy-line"><b>Legacy:</b> Shastri is remembered for personal simplicity, integrity in office — most famously his 1956 resignation — and for steering India through one of its most difficult years without abandoning either its farmers or its soldiers.</div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:0.6rem;">
+      <button class="primary" onclick="showView('quiz')">Take the quiz →</button>
+    </div>
+
+  </section>
+
+  <!-- ================= QUIZ VIEW ================= -->
+  <section id="view-quiz" class="view">
+
+    <div id="quiz-intro" class="quiz-intro">
+      <h3 style="margin-bottom:0.3rem;">Five rounds, 170 questions, rising difficulty</h3>
+      <p style="color:var(--cream-dim); font-size:0.94rem; margin:0;">Round 1 is 20 easy warm-up questions, Round 2 steps up to 40, Round 3 is a 50-question deep round, and Rounds 4 &amp; 5 are two 30-question Extreme rounds for the finest details. Answer, see the explanation, then move on — your marks add up across all five rounds.</p>
+      <div class="level-row" id="level-row"></div>
+      <div style="text-align:center; margin-top:1.3rem;">
+        <button class="primary" id="start-btn" onclick="startQuiz()">Start Round 1</button>
+      </div>
+    </div>
+
+    <div id="quiz-play" style="display:none;">
+      <div class="quiz-header">
+        <div class="qh-level" id="qh-level">Round 1 · Easy</div>
+        <div id="qh-score" style="color:var(--cream-dim); font-size:0.9rem;">Score: 0</div>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%;"></div></div>
+      <div id="q-container"></div>
+    </div>
+
+    <div id="quiz-results" style="display:none;">
+      <div class="results-card">
+        <div class="score-label" id="res-round-label">ROUND 1 COMPLETE</div>
+        <div class="score-big" id="res-score">0/20</div>
+        <div class="verdict" id="res-verdict"></div>
+        <div class="results-actions" id="res-actions"></div>
+        <div class="missed-list" id="missed-list">
+          <h4>Questions to revisit</h4>
+          <div id="missed-items"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>Built for revision, not for exams — always check your syllabus for what's officially examinable.</footer>
+
+<script>
+// ================= QUESTION BANK =================
+// Round 1: Easy (20) · Round 2: Medium (40) · Round 3: Hard (50)
+
+const ROUND1 = [
+  { q:"Mahatma Gandhi is widely known by which title?", opts:["Father of the Nation","Iron Man of India","Netaji","Chacha"], correct:0,
+    explain:"Gandhi is officially referred to as the <b>Father of the Nation</b> in India, and affectionately called Bapu." },
+  { q:"In which year was Mahatma Gandhi born?", opts:["1859","1869","1879","1889"], correct:1,
+    explain:"Gandhi was born on 2 October <b>1869</b> in Porbandar, Gujarat." },
+  { q:"Where was Gandhi born?", opts:["Ahmedabad","Porbandar","Surat","Rajkot"], correct:1,
+    explain:"Gandhi was born in <b>Porbandar</b>, a coastal town in Gujarat." },
+  { q:"What was the name of Gandhi's wife?", opts:["Kasturba","Savitri","Ramdulari","Lalita"], correct:0,
+    explain:"Gandhi married <b>Kasturba</b> (later known as Kasturba Gandhi) at a young age." },
+  { q:"Who gave Gandhi the title 'Mahatma', meaning Great Soul?", opts:["Jawaharlal Nehru","Rabindranath Tagore","Sardar Patel","B. R. Ambedkar"], correct:1,
+    explain:"The title <b>Mahatma</b> is credited to poet <b>Rabindranath Tagore</b>." },
+  { q:"Gandhi studied law in which country?", opts:["India","South Africa","England","France"], correct:2,
+    explain:"Gandhi sailed to <b>England</b> in 1888 to study law at the Inner Temple." },
+  { q:"What method of protest is Gandhi most associated with?", opts:["Armed rebellion","Non-violent resistance (Satyagraha)","Guerrilla warfare","Economic sanctions by other nations"], correct:1,
+    explain:"Gandhi's core method was <b>Satyagraha</b>, non-violent resistance grounded in truth." },
+  { q:"The 1930 Salt March is also known as the:", opts:["Quit India March","Dandi March","Champaran March","Non-Cooperation March"], correct:1,
+    explain:"The Salt March is also called the <b>Dandi March</b>, after its destination village." },
+  { q:"In which city was Gandhi assassinated?", opts:["Mumbai","Ahmedabad","New Delhi","Kolkata"], correct:2,
+    explain:"Gandhi was assassinated in <b>New Delhi</b> on 30 January 1948." },
+  { q:"Which date is celebrated as Gandhi Jayanti?", opts:["15 August","26 January","2 October","30 January"], correct:2,
+    explain:"Gandhi's birthday, <b>2 October</b>, is observed as Gandhi Jayanti." },
+  { q:"In which year was Lal Bahadur Shastri born?", opts:["1894","1904","1914","1924"], correct:1,
+    explain:"Shastri was born on 2 October <b>1904</b>." },
+  { q:"Where was Lal Bahadur Shastri born?", opts:["Varanasi","Lucknow","Mughalsarai","Allahabad"], correct:2,
+    explain:"Shastri was born in <b>Mughalsarai</b>, near Varanasi in present-day Uttar Pradesh." },
+  { q:"Lal Bahadur Shastri served as which numbered Prime Minister of India?", opts:["First","Second","Third","Fourth"], correct:1,
+    explain:"Shastri was India's <b>second</b> Prime Minister, after Jawaharlal Nehru." },
+  { q:"Which famous slogan is associated with Lal Bahadur Shastri?", opts:["Inquilab Zindabad","Jai Jawan, Jai Kisan","Vande Mataram","Satyameva Jayate"], correct:1,
+    explain:"Shastri coined \"<b>Jai Jawan, Jai Kisan</b>\" during the 1965 war, honouring soldiers and farmers." },
+  { q:"Shastri became Prime Minister after the death of which leader?", opts:["Sardar Patel","Jawaharlal Nehru","Rajendra Prasad","Subhas Chandra Bose"], correct:1,
+    explain:"Shastri succeeded <b>Jawaharlal Nehru</b>, who died in May 1964." },
+  { q:"In which city did Lal Bahadur Shastri die?", opts:["Moscow","Tashkent","Delhi","Karachi"], correct:1,
+    explain:"Shastri died in <b>Tashkent</b>, in the Soviet Union (now Uzbekistan)." },
+  { q:"Shastri led India through a war with which country in 1965?", opts:["China","Pakistan","Sri Lanka","Nepal"], correct:1,
+    explain:"Shastri led India through the <b>1965 war with Pakistan</b>." },
+  { q:"Which of India's highest honours was Lal Bahadur Shastri awarded after his death?", opts:["Padma Vibhushan","Bharat Ratna","Ashoka Chakra","Param Vir Chakra"], correct:1,
+    explain:"Shastri was posthumously awarded the <b>Bharat Ratna</b> in 1966." },
+  { q:"India gained independence from British rule in which year, within Gandhi's lifetime?", opts:["1942","1945","1947","1950"], correct:2,
+    explain:"India became independent on 15 August <b>1947</b>, months before Gandhi's death." },
+  { q:"Gandhi and Shastri share the same birth date. What is it?", opts:["2 October","15 August","26 January","30 January"], correct:0,
+    explain:"Both leaders were born on <b>2 October</b> (1869 and 1904 respectively)." }
+];
+
+const ROUND2 = [
+  { q:"What is Mahatma Gandhi's full name?", opts:["Mohandas Karamchand Gandhi","Manilal Karamchand Gandhi","Mohandas Mani Gandhi","Karamchand Mohandas Gandhi"], correct:0,
+    explain:"His full name was <b>Mohandas Karamchand Gandhi</b>." },
+  { q:"In which year did Gandhi travel to South Africa to work as a lawyer?", opts:["1888","1893","1901","1915"], correct:1,
+    explain:"Gandhi went to South Africa in <b>1893</b> for a legal case." },
+  { q:"What happened to Gandhi at the Pietermaritzburg train station in 1893?", opts:["He was arrested for protest","He was thrown off a first-class carriage","He gave his first public speech","He met his future wife"], correct:1,
+    explain:"Gandhi was <b>thrown off a first-class carriage</b> for refusing to move to third class, a pivotal moment for him." },
+  { q:"In which year did Gandhi found the Natal Indian Congress?", opts:["1894","1904","1914","1920"], correct:0,
+    explain:"He founded the <b>Natal Indian Congress</b> in <b>1894</b> to organise Indians in South Africa." },
+  { q:"Gandhi's first satyagraha on Indian soil, in 1917, supported farmers in:", opts:["Champaran, Bihar","Kheda, Gujarat","Bardoli, Gujarat","Noakhali, Bengal"], correct:0,
+    explain:"The <b>Champaran Satyagraha</b> (1917) supported indigo farmers exploited under British planters." },
+  { q:"The Kheda Satyagraha of 1918 was fought over:", opts:["Salt tax","Tax relief after crop failure","Textile mill wages","Voting rights"], correct:1,
+    explain:"The <b>Kheda Satyagraha</b> sought tax relief for Gujarati farmers after a failed harvest." },
+  { q:"In which year did Gandhi found Sabarmati Ashram?", opts:["1915","1917","1920","1930"], correct:1,
+    explain:"<b>Sabarmati Ashram</b>, near Ahmedabad, was founded in <b>1917</b>." },
+  { q:"The Non-Cooperation Movement (1920–1922) was called off after which incident?", opts:["Jallianwala Bagh massacre","Chauri Chaura incident","Salt March","Quit India arrests"], correct:1,
+    explain:"Gandhi called off the movement after the <b>Chauri Chaura incident</b>, where a mob killed policemen." },
+  { q:"Which newspaper did Gandhi edit in India to spread his ideas?", opts:["The Statesman","Young India","The Times of India","The Hindu"], correct:1,
+    explain:"Gandhi edited <b>Young India</b> (and later Harijan and Navajivan) to reach the public." },
+  { q:"The Poona Pact of 1932 was signed between Gandhi and which leader?", opts:["Jawaharlal Nehru","B. R. Ambedkar","Muhammad Ali Jinnah","Subhas Chandra Bose"], correct:1,
+    explain:"The <b>Poona Pact</b> was signed with <b>B. R. Ambedkar</b> over representation for the depressed classes." },
+  { q:"What was the reason behind Gandhi's fast that led to the Poona Pact?", opts:["Opposition to the salt tax","Opposition to separate electorates for depressed classes","Demand for full independence","Protest against Partition"], correct:1,
+    explain:"Gandhi fasted against <b>separate electorates</b> for the depressed classes, worried it would divide Hindu society." },
+  { q:"What was the call given by Gandhi at the start of the Quit India Movement?", opts:["Do or Die","Inquilab Zindabad","Swaraj is my birthright","Back to the Vedas"], correct:0,
+    explain:"Gandhi's call in 1942 was \"<b>Do or Die</b>.\"" },
+  { q:"Where was Gandhi imprisoned during the Quit India Movement?", opts:["Yerwada Jail","Aga Khan Palace, Pune","Andaman Cellular Jail","Naini Central Jail"], correct:1,
+    explain:"Gandhi was held at the <b>Aga Khan Palace</b> in Pune from 1942." },
+  { q:"Gandhi's wife Kasturba died in 1944 while he was imprisoned at:", opts:["Yerwada Jail","Aga Khan Palace","Sabarmati Jail","Naini Jail"], correct:1,
+    explain:"Kasturba Gandhi died in 1944 during their imprisonment at the <b>Aga Khan Palace</b>." },
+  { q:"What is the title of Gandhi's autobiography?", opts:["Hind Swaraj","The Story of My Experiments with Truth","India Wins Freedom","My Truth"], correct:1,
+    explain:"Gandhi's autobiography is titled <b>The Story of My Experiments with Truth</b>." },
+  { q:"Which short book did Gandhi write in 1909 outlining his vision of self-rule?", opts:["Hind Swaraj","Satyagraha in South Africa","Constructive Programme","Sarvodaya"], correct:0,
+    explain:"<b>Hind Swaraj</b> (1909) laid out Gandhi's early vision of Indian self-rule." },
+  { q:"What term did Gandhi use for the so-called 'untouchable' castes, meaning 'children of God'?", opts:["Dalit","Harijan","Adivasi","Shudra"], correct:1,
+    explain:"Gandhi used the term <b>Harijan</b> ('children of God') for the depressed classes." },
+  { q:"Who assassinated Mahatma Gandhi?", opts:["Nathuram Godse","Udham Singh","Madan Lal Dhingra","Bhagat Singh"], correct:0,
+    explain:"Gandhi was assassinated by <b>Nathuram Godse</b> on 30 January 1948." },
+  { q:"Who was Gandhi's political mentor, often called his 'political guru'?", opts:["Bal Gangadhar Tilak","Gopal Krishna Gokhale","Dadabhai Naoroji","Lala Lajpat Rai"], correct:1,
+    explain:"<b>Gopal Krishna Gokhale</b> guided Gandhi's early years in Indian politics." },
+  { q:"Gandhi supported the Khilafat Movement mainly to build unity between:", opts:["Hindus and Sikhs","Hindus and Muslims","Landlords and tenants","North and South India"], correct:1,
+    explain:"The <b>Khilafat Movement</b> (1919–1924) was Gandhi's platform for building <b>Hindu-Muslim unity</b>." },
+  { q:"Gandhi attended the Second Round Table Conference in which city?", opts:["Paris","London","Geneva","New York"], correct:1,
+    explain:"Gandhi attended the Second Round Table Conference in <b>London</b> in 1931." },
+  { q:"What was Lal Bahadur Shastri's original surname before he dropped it?", opts:["Verma","Srivastava","Shukla","Tiwari"], correct:1,
+    explain:"Shastri was born <b>Lal Bahadur Srivastava</b> and later dropped the caste-linked surname." },
+  { q:"Which institution gave Lal Bahadur the title 'Shastri', meaning 'scholar'?", opts:["Banaras Hindu University","Kashi Vidyapith","Aligarh Muslim University","Allahabad University"], correct:1,
+    explain:"He earned the title from the nationalist <b>Kashi Vidyapith</b> in Varanasi." },
+  { q:"At around what age did young Lal Bahadur join the Non-Cooperation Movement, leaving school?", opts:["12","16","21","28"], correct:1,
+    explain:"He was about <b>16</b> when he left school to join the 1921 Non-Cooperation Movement." },
+  { q:"Shastri served as president of which organisation founded by Lala Lajpat Rai?", opts:["Servants of the People Society","Hindustan Socialist Republican Association","Ghadar Party","Arya Samaj"], correct:0,
+    explain:"He led the <b>Servants of the People Society</b>, founded by Lala Lajpat Rai." },
+  { q:"As a minister in Uttar Pradesh, Shastri introduced which crowd-control alternative to lathi-charges?", opts:["Tear gas","Water jets","Rubber bullets","Curfews only"], correct:1,
+    explain:"Shastri promoted the use of <b>water jets</b> instead of lathi-charges to disperse crowds." },
+  { q:"Which railway-related post did Shastri hold from 1951 to 1956?", opts:["Deputy Railway Minister","Railway Minister","Railway Board Chairman","Transport Secretary"], correct:1,
+    explain:"He served as <b>Railway Minister</b> in Nehru's cabinet from 1951 to 1956." },
+  { q:"In which year did the train accidents leading to Shastri's resignation as Railway Minister occur?", opts:["1950","1953","1956","1960"], correct:2,
+    explain:"Both the Mahbubnagar and Ariyalur train accidents occurred in <b>1956</b>." },
+  { q:"How did Prime Minister Nehru initially respond to Shastri's first resignation offer (after Mahbubnagar)?", opts:["Accepted it immediately","Refused it","Ignored it","Demoted him instead"], correct:1,
+    explain:"Nehru <b>refused</b> the first resignation, believing Shastri was not personally at fault." },
+  { q:"Which post did Shastri return to the cabinet with in 1957, after his resignation?", opts:["Defence Minister","Minister without Portfolio","Finance Minister","Foreign Minister"], correct:1,
+    explain:"He rejoined as <b>Minister without Portfolio</b> in 1957." },
+  { q:"Shastri served as India's Home Minister during which years?", opts:["1957–1959","1961–1963","1964–1966","1959–1961"], correct:1,
+    explain:"Shastri was Home Minister from <b>1961 to 1963</b>." },
+  { q:"In which year did Jawaharlal Nehru die, leading to Shastri becoming Prime Minister?", opts:["1962","1964","1966","1968"], correct:1,
+    explain:"Nehru died on 27 May <b>1964</b>." },
+  { q:"On what date did Shastri take office as Prime Minister?", opts:["9 June 1964","15 August 1964","2 October 1964","26 January 1965"], correct:0,
+    explain:"Shastri became Prime Minister on <b>9 June 1964</b>." },
+  { q:"Which agricultural transformation did Shastri's government lay the groundwork for, boosting food-grain output?", opts:["White Revolution only","Green Revolution","Blue Revolution","Silent Revolution"], correct:1,
+    explain:"His government supported high-yield seed varieties that fed into the <b>Green Revolution</b>." },
+  { q:"Shastri backed which dairy cooperative model, associated with Verghese Kurien, as part of the 'White Revolution'?", opts:["Mother Dairy","Amul","Nandini","Vijaya"], correct:1,
+    explain:"He supported the <b>Amul</b> cooperative model from Anand, Gujarat, and the National Dairy Development Board." },
+  { q:"Which country's forces did India fight in the 1965 war led by Shastri?", opts:["China","Pakistan","Bangladesh","Sri Lanka"], correct:1,
+    explain:"The <b>1965 war</b> was fought against <b>Pakistan</b>." },
+  { q:"The Tashkent Agreement of January 1966 was signed to end conflict with which country?", opts:["China","Nepal","Pakistan","Burma"], correct:2,
+    explain:"The <b>Tashkent Agreement</b> ended the 1965 war with <b>Pakistan</b>." },
+  { q:"Which country mediated the Tashkent talks between India and Pakistan?", opts:["United States","Soviet Union","United Kingdom","France"], correct:1,
+    explain:"The <b>Soviet Union</b> mediated the talks that produced the Tashkent Agreement." },
+  { q:"What was recorded as the official cause of Shastri's death in Tashkent?", opts:["Heart attack","Plane crash","Poisoning (officially confirmed)","Road accident"], correct:0,
+    explain:"The officially recorded cause of death was a <b>heart attack</b>, though some have long questioned this account." },
+  { q:"In which year was Lal Bahadur Shastri awarded the Bharat Ratna?", opts:["1964","1966","1971","1980"], correct:1,
+    explain:"He was awarded the <b>Bharat Ratna</b> posthumously in <b>1966</b>." }
+];
+
+const ROUND3 = [
+  { q:"What was the occupation of Gandhi's father, Karamchand Gandhi?", opts:["Farmer","Diwan (chief minister) of Porbandar","Lawyer","Schoolteacher"], correct:1,
+    explain:"Karamchand Gandhi served as <b>Diwan (chief minister) of Porbandar</b> state." },
+  { q:"What was the name of Gandhi's mother?", opts:["Putlibai","Kasturba","Ramdulari","Laxmibai"], correct:0,
+    explain:"Gandhi's mother was named <b>Putlibai</b>." },
+  { q:"At what age was Gandhi married to Kasturba?", opts:["10","13","16","18"], correct:1,
+    explain:"Gandhi was married to Kasturba at the age of <b>13</b>, as was customary then." },
+  { q:"Which firm's legal case took Gandhi to South Africa in 1893?", opts:["Dada Abdulla & Co.","Tata & Sons","East India Company","Birla Group"], correct:0,
+    explain:"Gandhi travelled to South Africa for a case involving the firm <b>Dada Abdulla & Co.</b>" },
+  { q:"Gandhi first used satyagraha to resist which South African law, in 1906?", opts:["The Pass Laws Act","The Transvaal Asiatic Registration Act ('Black Act')","The Natal Franchise Act","The Group Areas Act"], correct:1,
+    explain:"His first satyagraha campaign resisted the <b>Transvaal Asiatic Registration Act</b>, dubbed the 'Black Act.'" },
+  { q:"What newspaper did Gandhi start in South Africa in 1904?", opts:["Young India","Harijan","Indian Opinion","Navajivan"], correct:2,
+    explain:"Gandhi founded <b>Indian Opinion</b> in South Africa in 1904." },
+  { q:"About how many days did the Dandi March take?", opts:["10 days","17 days","24 days","30 days"], correct:2,
+    explain:"The Dandi March took about <b>24 days</b>, from 12 March to 6 April 1930." },
+  { q:"Approximately how far did marchers walk during the Dandi March?", opts:["About 100 km","About 240 km","About 390 km","About 600 km"], correct:2,
+    explain:"The march covered roughly <b>390 km (about 240 miles)</b>." },
+  { q:"The Dandi March began at Sabarmati Ashram and ended at:", opts:["Surat","Dandi","Porbandar","Bhavnagar"], correct:1,
+    explain:"The march ended at the coastal village of <b>Dandi</b>, where Gandhi made salt by hand." },
+  { q:"In which year did Gandhi return to India after his years in South Africa?", opts:["1910","1915","1920","1925"], correct:1,
+    explain:"Gandhi returned to India in <b>1915</b> after about 21 years abroad." },
+  { q:"About how many years in total did Gandhi spend in South Africa?", opts:["About 10 years","About 15 years","About 21 years","About 30 years"], correct:2,
+    explain:"Gandhi spent roughly <b>21 years</b> in South Africa (1893–1915)." },
+  { q:"In which year did Gandhi launch the limited Individual Satyagraha campaign?", opts:["1930","1935","1940","1945"], correct:2,
+    explain:"The <b>Individual Satyagraha</b> began in <b>1940</b>." },
+  { q:"Who was chosen as the first individual satyagrahi by Gandhi in 1940?", opts:["Jawaharlal Nehru","Vinoba Bhave","Sardar Patel","Rajendra Prasad"], correct:1,
+    explain:"<b>Vinoba Bhave</b> was selected as the first individual satyagrahi." },
+  { q:"In 1944, Gandhi held talks on Hindu-Muslim unity and the demand for Pakistan with:", opts:["Muhammad Ali Jinnah","Liaquat Ali Khan","Ayub Khan","Sikandar Hayat Khan"], correct:0,
+    explain:"Gandhi held the <b>Gandhi-Jinnah talks</b> in 1944 on Hindu-Muslim unity." },
+  { q:"At which residence in Delhi was Gandhi assassinated?", opts:["Teen Murti House","Birla House","Rashtrapati Bhavan","Red Fort"], correct:1,
+    explain:"Gandhi was shot at <b>Birla House</b> in New Delhi during an evening prayer meeting." },
+  { q:"How many times was Gandhi shot during his assassination?", opts:["Once","Twice","Three times","Four times"], correct:2,
+    explain:"Gandhi was shot <b>three times</b> at close range by Nathuram Godse." },
+  { q:"Roughly how many times was Gandhi nominated for the Nobel Peace Prize, without ever winning it?", opts:["Once","Twice","Five times","Ten times"], correct:2,
+    explain:"Gandhi was nominated for the Nobel Peace Prize about <b>five times</b> but never received it." },
+  { q:"Which UN-designated day marks Gandhi's birthday worldwide?", opts:["International Day of Peace","International Day of Non-Violence","World Human Rights Day","International Day of Tolerance"], correct:1,
+    explain:"2 October is observed globally as the <b>International Day of Non-Violence</b>." },
+  { q:"What was the name of the cooperative farm Gandhi set up in South Africa in 1910 for satyagrahis' families?", opts:["Sabarmati Ashram","Tolstoy Farm","Sevagram","Wardha Ashram"], correct:1,
+    explain:"Gandhi established <b>Tolstoy Farm</b> near Johannesburg in 1910." },
+  { q:"In which Indian city is Sabarmati Ashram located?", opts:["Surat","Ahmedabad","Vadodara","Rajkot"], correct:1,
+    explain:"Sabarmati Ashram is located near <b>Ahmedabad</b>, Gujarat." },
+  { q:"The Champaran Satyagraha of 1917 addressed the exploitative farming system known as:", opts:["Zamindari","Tinkathia","Ryotwari","Mahalwari"], correct:1,
+    explain:"Farmers were forced to grow indigo under the <b>tinkathia</b> system, which Gandhi's satyagraha challenged." },
+  { q:"Besides Champaran and Kheda, Gandhi supported which 1918 labour dispute involving his first hunger strike?", opts:["Bombay dockworkers' strike","Ahmedabad mill workers' strike","Kolkata jute workers' strike","Madras textile strike"], correct:1,
+    explain:"Gandhi supported the <b>Ahmedabad mill workers</b> in 1918, undertaking his first hunger strike in the process." },
+  { q:"Which title is given to Gandhi's philosophy of economic self-reliance, symbolised by hand-spun cloth?", opts:["Sarvodaya","Swadeshi","Ahimsa","Swaraj"], correct:1,
+    explain:"<b>Swadeshi</b> promoted self-reliance and khadi over foreign-made goods." },
+  { q:"What does Gandhi's term 'Sarvodaya' broadly mean?", opts:["Self-rule","Truth-force","Welfare of all","Non-violence"], correct:2,
+    explain:"<b>Sarvodaya</b> refers to the welfare and upliftment of all in society." },
+  { q:"Gandhi called to the Bar (qualified as a barrister) in which year?", opts:["1888","1891","1893","1901"], correct:1,
+    explain:"Gandhi was called to the Bar in <b>1891</b> after studying at the Inner Temple in London." },
+  { q:"What was Lal Bahadur Shastri's father's occupation?", opts:["Farmer","Schoolteacher, later a clerk","Lawyer","Railway engineer"], correct:1,
+    explain:"Sharada Prasad Srivastava worked as a <b>schoolteacher</b> and later as a clerk in the Revenue Office." },
+  { q:"About how old was Lal Bahadur Shastri when his father died?", opts:["An infant, about a year old","10 years old","16 years old","21 years old"], correct:0,
+    explain:"His father died when Shastri was still <b>an infant</b>, leaving his mother to raise him." },
+  { q:"After his father's death, who primarily raised young Lal Bahadur?", opts:["His father's brother","His maternal grandfather's household","An orphanage","A family friend in Delhi"], correct:1,
+    explain:"He was raised by his mother, Ramdulari Devi, at her <b>father's household</b>." },
+  { q:"In which city is Kashi Vidyapith, which gave Shastri his title, located?", opts:["Lucknow","Varanasi","Allahabad","Kanpur"], correct:1,
+    explain:"Kashi Vidyapith is located in <b>Varanasi</b>." },
+  { q:"What was the name of Lal Bahadur Shastri's wife?", opts:["Lalita Devi","Ramdulari Devi","Kamala Devi","Sushila Devi"], correct:0,
+    explain:"He married <b>Lalita Devi</b> (later known as Lalita Shastri) in 1928." },
+  { q:"In which year did Lal Bahadur Shastri marry?", opts:["1922","1928","1935","1940"], correct:1,
+    explain:"Shastri married Lalita Devi in <b>1928</b>." },
+  { q:"Roughly how many years did Shastri spend in British jails across the freedom movement?", opts:["About 2 years","About 5 years","About 9 years","About 15 years"], correct:2,
+    explain:"Across various movements, Shastri was imprisoned for a total of roughly <b>nine years</b>." },
+  { q:"In which movement did Shastri, along with Congress, participate in 1930?", opts:["Non-Cooperation Movement","Salt Satyagraha","Khilafat Movement","Round Table Conference"], correct:1,
+    explain:"Shastri took part in the <b>Salt Satyagraha</b> of 1930." },
+  { q:"In which year did Shastri join the Indian National Congress?", opts:["1921","1928","1934","1942"], correct:1,
+    explain:"Shastri formally joined the <b>Indian National Congress</b> in 1928." },
+  { q:"How many deaths, approximately, resulted from the September 1956 Mahbubnagar train accident?", opts:["About 25","About 60","Over 100","Over 500"], correct:2,
+    explain:"The Mahbubnagar accident killed <b>over 100</b> people." },
+  { q:"How many deaths, approximately, resulted from the November 1956 Ariyalur train accident that led to Shastri's resignation being accepted?", opts:["About 20","About 60","Over 140","Over 500"], correct:2,
+    explain:"The Ariyalur accident, where a train plunged into the Marudaiyaru river, killed <b>over 140</b> people." },
+  { q:"On what date did Shastri's resignation as Railway Minister take effect, after Ariyalur?", opts:["23 November 1956","7 December 1956","1 January 1957","26 January 1957"], correct:1,
+    explain:"Shastri's resignation was accepted and took effect on <b>7 December 1956</b>." },
+  { q:"What phrase did Nehru use in Parliament to describe why he accepted Shastri's resignation?", opts:["An act of political convenience","An example in constitutional propriety","A necessary punishment","A routine cabinet reshuffle"], correct:1,
+    explain:"Nehru said accepting it set <b>an example in constitutional propriety</b>, not that Shastri was at fault." },
+  { q:"Which agriculture minister worked closely with Shastri on high-yield seed policies that fed the Green Revolution?", opts:["C. Subramaniam","Charan Singh","Y. B. Chavan","Morarji Desai"], correct:0,
+    explain:"<b>C. Subramaniam</b>, as Agriculture Minister, worked with Shastri to push high-yield-variety seeds." },
+  { q:"Which dairy-development body did Shastri's government support, alongside the Amul model?", opts:["Food Corporation of India","National Dairy Development Board","Khadi and Village Industries Commission","Agricultural Prices Commission"], correct:1,
+    explain:"His government backed the creation of the <b>National Dairy Development Board</b>." },
+  { q:"During the 1965 war and food shortage, Shastri asked citizens to skip a meal on which day of the week?", opts:["Sunday","Monday","Friday","Saturday"], correct:1,
+    explain:"Shastri asked people to skip their evening meal on <b>Mondays</b> to help conserve foodgrain." },
+  { q:"In which month did the 1965 India-Pakistan war primarily break out?", opts:["January 1965","April 1965","August 1965","December 1965"], correct:2,
+    explain:"Fighting escalated from <b>August 1965</b> before a UN-brokered ceasefire in September." },
+  { q:"Who was Pakistan's President at the time of the Tashkent Agreement?", opts:["Ayub Khan","Yahya Khan","Zulfikar Ali Bhutto","Liaquat Ali Khan"], correct:0,
+    explain:"Pakistan's President <b>Ayub Khan</b> signed the Tashkent Agreement with Shastri." },
+  { q:"Who was the Soviet Premier who mediated the Tashkent talks?", opts:["Nikita Khrushchev","Alexei Kosygin","Leonid Brezhnev","Joseph Stalin"], correct:1,
+    explain:"Soviet Premier <b>Alexei Kosygin</b> mediated the talks in Tashkent." },
+  { q:"On what date was the Tashkent Agreement signed?", opts:["10 January 1966","11 January 1966","26 January 1966","30 January 1966"], correct:0,
+    explain:"The agreement was signed on <b>10 January 1966</b>; Shastri died the following night." },
+  { q:"What is the name of Shastri's memorial on the banks of the Yamuna in Delhi?", opts:["Raj Ghat","Vijay Ghat","Shanti Van","Kisan Ghat"], correct:1,
+    explain:"Shastri's memorial is known as <b>Vijay Ghat</b>." },
+  { q:"Was Lal Bahadur Shastri the first Prime Minister of India to receive the Bharat Ratna posthumously?", opts:["Yes","No, Nehru was first","No, Indira Gandhi was first","No award was given posthumously"], correct:0,
+    explain:"Shastri was the <b>first Indian Prime Minister</b> to be awarded the Bharat Ratna after death." },
+  { q:"Which English translation best fits Shastri's slogan 'Jai Jawan, Jai Kisan'?", opts:["Victory to the People, Victory to the Nation","Hail the Soldier, Hail the Farmer","Long Live the Revolution","Truth Alone Triumphs"], correct:1,
+    explain:"\"Jai Jawan, Jai Kisan\" translates to \"<b>Hail the Soldier, Hail the Farmer</b>.\"" },
+  { q:"Before becoming Prime Minister, what was Shastri's last position under Nehru?", opts:["Defence Minister","Minister without Portfolio","Foreign Minister","Finance Minister"], correct:1,
+    explain:"Nehru had brought Shastri back as <b>Minister without Portfolio</b> shortly before his own death." },
+  { q:"Both Gandhi and Shastri were, at different times, imprisoned by the British for their roles in which shared movement?", opts:["Quit India Movement","Round Table Conference","Poona Pact negotiations","Simon Commission boycott (exclusively)"], correct:0,
+    explain:"Both were active participants and were jailed in connection with the <b>Quit India Movement</b> of 1942." }
+];
+
+const ROUND4 = [
+  { q:"To which merchant community (caste) did Gandhi's family belong?", opts:["Brahmin","Kshatriya","Bania (Modh Baniya)","Kayastha"], correct:2,
+    explain:"Gandhi's family belonged to the <b>Modh Baniya</b>, a Bania (merchant) community." },
+  { q:"Which book by John Ruskin inspired Gandhi to found the Phoenix Settlement?", opts:["Unto This Last","The Kingdom of God Is Within You","Sartor Resartus","The Stones of Venice"], correct:0,
+    explain:"Ruskin's <b>Unto This Last</b> deeply influenced Gandhi's ideas on labour and simple living." },
+  { q:"After which Russian writer, with whom Gandhi corresponded, was Tolstoy Farm named?", opts:["Anton Chekhov","Leo Tolstoy","Fyodor Dostoevsky","Maxim Gorky"], correct:1,
+    explain:"Tolstoy Farm was named after <b>Leo Tolstoy</b>, whose writings and letters influenced Gandhi." },
+  { q:"During the Boer War (1899) in South Africa, Gandhi organised Indians into a:", opts:["Political lobby group","Indian Ambulance Corps (stretcher-bearers)","Trade union","Armed volunteer militia"], correct:1,
+    explain:"Gandhi formed an <b>Indian Ambulance Corps</b> of stretcher-bearers to support the British side." },
+  { q:"Gandhi again organised an ambulance/stretcher-bearer corps during which 1906 conflict in South Africa?", opts:["The Zulu Rebellion","The Second Boer War","The Xhosa Wars","The Matabele War"], correct:0,
+    explain:"Gandhi assisted during the <b>Zulu Rebellion</b> of 1906 in a similar non-combatant role." },
+  { q:"In which year, and at which session, was Gandhi elected President of the Indian National Congress — the only time he held that post?", opts:["1920, Nagpur session","1924, Belgaum session","1929, Lahore session","1931, Karachi session"], correct:1,
+    explain:"Gandhi served as Congress President only once, at the <b>1924 Belgaum session</b>." },
+  { q:"How did Gandhi famously describe the 1942 Cripps Mission proposals, which he rejected?", opts:["'A blank cheque with no signature'","'A post-dated cheque on a crashing bank'","'A gift with strings attached'","'Too little, too late'"], correct:1,
+    explain:"Gandhi called the Cripps proposals \"<b>a post-dated cheque on a crashing bank</b>.\"" },
+  { q:"At which Bombay ground was the Quit India resolution declared on 8 August 1942?", opts:["Azad Maidan","Gowalia Tank Maidan","Shivaji Park","Cross Maidan"], correct:1,
+    explain:"The resolution was passed at <b>Gowalia Tank Maidan</b>, later renamed August Kranti Maidan." },
+  { q:"Who is credited with first suggesting the phrase 'Quit India' to Gandhi?", opts:["Yusuf Meherally","Jayaprakash Narayan","Aruna Asaf Ali","Ram Manohar Lohia"], correct:0,
+    explain:"Socialist leader <b>Yusuf Meherally</b> is credited with coining the phrase 'Quit India.'" },
+  { q:"Which close aide served as Gandhi's secretary and constant companion for over two decades, until his death in 1942?", opts:["Mahadev Desai","J. B. Kripalani","Pyarelal Nayyar","Mira Behn"], correct:0,
+    explain:"<b>Mahadev Desai</b> served as Gandhi's secretary from 1917 until his own death in 1942." },
+  { q:"Which leader earned the title 'Sardar' partly through his role alongside Gandhi in the Kheda Satyagraha?", opts:["Vallabhbhai Patel","Rajendra Prasad","C. Rajagopalachari","Jawaharlal Nehru"], correct:0,
+    explain:"<b>Vallabhbhai Patel</b>'s leadership in the Kheda Satyagraha helped earn him the title 'Sardar.'" },
+  { q:"What is the title of Gandhi's book recounting his struggles in South Africa, published in 1928?", opts:["Hind Swaraj","Satyagraha in South Africa","My Experiments with Truth","Constructive Programme"], correct:1,
+    explain:"Gandhi wrote <b>Satyagraha in South Africa</b> (1928) about his years there." },
+  { q:"Which organisation did Gandhi found in 1925 to promote hand-spinning of khadi?", opts:["All India Spinners' Association","Harijan Sevak Sangh","All India Village Industries Association","Khadi Gram Udyog"], correct:0,
+    explain:"The <b>All India Spinners' Association</b> was founded in 1925 to promote khadi." },
+  { q:"Which organisation, founded in 1934, focused on rural and village-level economic development?", opts:["All India Spinners' Association","Servants of India Society","All India Village Industries Association","Harijan Sevak Sangh"], correct:2,
+    explain:"The <b>All India Village Industries Association</b> was founded in 1934." },
+  { q:"In which year did Gandhi resign his formal Congress membership to focus on 'constructive work'?", opts:["1928","1934","1939","1942"], correct:1,
+    explain:"Gandhi stepped back from formal Congress membership in <b>1934</b> to focus on rural constructive programmes." },
+  { q:"How many days before his assassination did Gandhi survive an earlier bomb attack at Birla House?", opts:["About 3 days","About 10 days","About 30 days","About 60 days"], correct:1,
+    explain:"A bomb thrown by Madanlal Pahwa on 20 January 1948 — about <b>10 days</b> before the fatal shooting — failed to kill Gandhi." },
+  { q:"What type of weapon did Nathuram Godse use to assassinate Gandhi?", opts:["A rifle","A Beretta semi-automatic pistol","A dagger","A revolver of Indian make"], correct:1,
+    explain:"Godse used a <b>Beretta semi-automatic pistol</b> to shoot Gandhi." },
+  { q:"Nathuram Godse was associated with which organisation?", opts:["Indian National Congress","Hindu Mahasabha","Muslim League","Communist Party of India"], correct:1,
+    explain:"Godse was linked to the <b>Hindu Mahasabha</b>, which opposed Gandhi's conciliatory stance toward Muslims." },
+  { q:"In which year was Nathuram Godse executed for Gandhi's assassination?", opts:["1948","1949","1950","1952"], correct:1,
+    explain:"Godse was hanged on 15 November <b>1949</b>, along with co-conspirator Narayan Apte." },
+  { q:"What are Gandhi's traditionally reported last words after being shot?", opts:["'Jai Hind'","'Hey Ram'","'Satyagraha'","'Quit India'"], correct:1,
+    explain:"Gandhi is traditionally said to have uttered \"<b>Hey Ram</b>\" as he fell." },
+  { q:"How many sons did Gandhi have?", opts:["Two","Three","Four","Five"], correct:2,
+    explain:"Gandhi had <b>four sons</b>: Harilal, Manilal, Ramdas, and Devdas." },
+  { q:"Which of Gandhi's sons had a famously strained relationship with him and later converted to Islam for a time?", opts:["Manilal","Ramdas","Devdas","Harilal"], correct:3,
+    explain:"<b>Harilal Gandhi</b>, the eldest son, had a troubled relationship with his father." },
+  { q:"In which year was Gandhi named Time magazine's 'Man of the Year'?", opts:["1922","1930","1942","1947"], correct:1,
+    explain:"Gandhi was Time's <b>Man of the Year for 1930</b>, the only Indian ever given that title." },
+  { q:"Across which span of years was Gandhi nominated for the Nobel Peace Prize?", opts:["1920–1922","1937–1939 and 1947–1948","1930–1932","1944–1946"], correct:1,
+    explain:"Gandhi received Nobel Peace Prize nominations in <b>1937–1939 and 1947–1948</b>, five times in all." },
+  { q:"The site of Gandhi's assassination, Birla House in Delhi, is preserved today as a memorial called:", opts:["Raj Ghat","Gandhi Smriti","Sabarmati Smarak","Rashtrapati Smriti"], correct:1,
+    explain:"Birla House is preserved as <b>Gandhi Smriti</b>." },
+  { q:"In which year was a statue of Gandhi unveiled in Parliament Square, London?", opts:["1969","1997","2015","2020"], correct:2,
+    explain:"A statue of Gandhi was unveiled in Parliament Square, London, in <b>2015</b>." },
+  { q:"Approximately how many followers began the Dandi March with Gandhi from Sabarmati Ashram?", opts:["About 20","About 78","About 200","About 500"], correct:1,
+    explain:"The march began with roughly <b>78</b> followers from the ashram." },
+  { q:"Gandhi supported the 1928 boycott of which British commission, under the slogan 'Simon, Go Back'?", opts:["The Cripps Mission","The Simon Commission","The Cabinet Mission","The Butler Committee"], correct:1,
+    explain:"Gandhi backed the boycott of the <b>Simon Commission</b> in 1928." },
+  { q:"Gandhi is said to have frozen with nervousness during his first case as a young lawyer, in which city?", opts:["London","Durban","Bombay","Ahmedabad"], correct:2,
+    explain:"Gandhi's famously unsuccessful first case as a young barrister was in <b>Bombay</b>." },
+  { q:"Which Hindu scripture did Gandhi describe as his spiritual guide, translating parts of it himself?", opts:["The Upanishads","The Bhagavad Gita","The Ramayana","The Manusmriti"], correct:1,
+    explain:"Gandhi called the <b>Bhagavad Gita</b> his spiritual dictionary and guide." }
+];
+
+const ROUND5 = [
+  { q:"What was Lal Bahadur Shastri's affectionate family nickname?", opts:["Munna","Nanhe","Chhotu","Lallan"], correct:1,
+    explain:"Within his family, Shastri was known by the nickname <b>'Nanhe'</b>." },
+  { q:"According to a famous childhood anecdote, how did young Lal Bahadur cross the Ganges to reach school, having no money for the ferry?", opts:["He took a longer land route","He swam across the river","He borrowed money daily","He rode a bullock cart"], correct:1,
+    explain:"He is said to have <b>swum across the Ganges</b> to attend school rather than pay the ferry fare." },
+  { q:"In a well-known childhood story, a gardener caught young Lal Bahadur stealing mangoes and, on learning he was an orphan, told him:", opts:["To never return to the orchard","That being an orphan made good behaviour even more important","To apologise publicly","To pay for the mangoes"], correct:1,
+    explain:"The gardener's words about behaving well precisely because he was an orphan left a lasting impression on him." },
+  { q:"How many children did Lal Bahadur and Lalita Shastri have in total?", opts:["Four","Five","Six","Eight"], correct:2,
+    explain:"The couple had <b>six children</b> — four sons and two daughters." },
+  { q:"Which of Shastri's sons went on to become a Congress politician and Union minister himself?", opts:["Sunil Shastri","Anil Shastri","Ashok Shastri","Hari Krishna Shastri"], correct:1,
+    explain:"<b>Anil Shastri</b> followed his father into Congress politics and served as a Union minister." },
+  { q:"In which year was Shastri elected to the United Provinces Legislative Assembly?", opts:["1928","1937","1946","1951"], correct:1,
+    explain:"Shastri was elected to the UP Legislative Assembly in <b>1937</b>." },
+  { q:"As a young UP legislator, Shastri served as Parliamentary Secretary to which senior leader?", opts:["Govind Ballabh Pant","Purushottam Das Tandon","Rafi Ahmed Kidwai","C. B. Gupta"], correct:0,
+    explain:"He served as Parliamentary Secretary to <b>Govind Ballabh Pant</b>." },
+  { q:"In which year, soon after independence, did Shastri become UP's Minister of Police and Transport?", opts:["1946","1947","1951","1957"], correct:1,
+    explain:"Shastri took up the UP Police and Transport portfolio in <b>1947</b>." },
+  { q:"In which year did Shastri become General Secretary of the All India Congress Committee?", opts:["1947","1951","1956","1961"], correct:1,
+    explain:"He became AICC General Secretary in <b>1951</b>, a post from which he helped organise Congress election campaigns." },
+  { q:"The 'Kamaraj Plan', under which senior leaders resigned to strengthen the Congress organisation, was proposed in which year?", opts:["1958","1963","1965","1967"], correct:1,
+    explain:"The <b>Kamaraj Plan</b> was launched in <b>1963</b>, named after Congress leader K. Kamaraj." },
+  { q:"From which post did Shastri resign in August 1963 under the Kamaraj Plan?", opts:["Railway Minister","Home Minister","Minister without Portfolio","Commerce Minister"], correct:1,
+    explain:"Shastri resigned as <b>Home Minister</b> as part of the Kamaraj Plan." },
+  { q:"After Nehru suffered a stroke, in which month was Shastri recalled to the cabinet as Minister without Portfolio?", opts:["October 1963","January 1964","April 1964","June 1964"], correct:1,
+    explain:"Shastri was brought back as Minister without Portfolio in <b>January 1964</b>, after Nehru's stroke." },
+  { q:"On what date did the Congress Parliamentary Party elect Shastri as its leader, paving the way for him to become PM?", opts:["27 May 1964","2 June 1964","9 June 1964","15 August 1964"], correct:1,
+    explain:"The party elected him leader on <b>2 June 1964</b>; he was sworn in as PM a week later." },
+  { q:"Who served as India's acting Prime Minister for 13 days after Nehru's death, before Shastri took charge?", opts:["Morarji Desai","Gulzarilal Nanda","Y. B. Chavan","Indira Gandhi"], correct:1,
+    explain:"<b>Gulzarilal Nanda</b> served as acting PM for 13 days between Nehru's death and Shastri's swearing-in." },
+  { q:"Who again served as acting Prime Minister for 13 days after Shastri's death, before Indira Gandhi took office?", opts:["Morarji Desai","Y. B. Chavan","Gulzarilal Nanda","Jagjivan Ram"], correct:2,
+    explain:"<b>Gulzarilal Nanda</b> served as acting Prime Minister a second time, after Shastri's death." },
+  { q:"Who was President of India throughout Lal Bahadur Shastri's time as Prime Minister?", opts:["Rajendra Prasad","Sarvepalli Radhakrishnan","Zakir Husain","V. V. Giri"], correct:1,
+    explain:"<b>Dr. Sarvepalli Radhakrishnan</b> was President of India during Shastri's premiership." },
+  { q:"Which minister in Shastri's cabinet, holding Information & Broadcasting, later became Prime Minister herself?", opts:["Indira Gandhi","Sucheta Kripalani","Vijaya Lakshmi Pandit","Tarkeshwari Sinha"], correct:0,
+    explain:"<b>Indira Gandhi</b> served as Information & Broadcasting Minister under Shastri before succeeding him." },
+  { q:"Which Pakistani military operation, involving infiltration into Kashmir, triggered full-scale war in August 1965?", opts:["Operation Gibraltar","Operation Grand Slam","Operation Chengiz Khan","Operation Searchlight"], correct:0,
+    explain:"<b>Operation Gibraltar</b>, an infiltration attempt into Jammu & Kashmir, triggered the 1965 war." },
+  { q:"Which strategic mountain pass did India capture during the 1965 war but later returned under the Tashkent Agreement?", opts:["Zoji La","Haji Pir Pass","Banihal Pass","Khardung La"], correct:1,
+    explain:"India captured the <b>Haji Pir Pass</b> in 1965 but agreed to return it under the Tashkent Agreement, a decision criticised by some at home." },
+  { q:"Which international body brokered the ceasefire that ended active fighting in the 1965 war, ahead of the Tashkent talks?", opts:["The Commonwealth","The United Nations","The Non-Aligned Movement","SEATO"], correct:1,
+    explain:"The <b>United Nations</b> brokered the ceasefire in September 1965, before the January 1966 Tashkent Agreement." },
+  { q:"Who was India's Army Chief during the 1965 war with Pakistan?", opts:["General K. M. Cariappa","General J. N. Chaudhuri","General Sam Manekshaw","General K. S. Thimayya"], correct:1,
+    explain:"<b>General J. N. Chaudhuri</b> was Chief of the Army Staff during the 1965 war." },
+  { q:"Who headed the Indian Air Force as Chief of Air Staff during the 1965 war?", opts:["Arjan Singh","P. C. Lal","S. Mukerjee","O. P. Mehra"], correct:0,
+    explain:"<b>Air Marshal Arjan Singh</b> led the IAF during the 1965 conflict." },
+  { q:"What was the main domestic criticism of the Tashkent Agreement that Shastri signed?", opts:["It failed to mention Kashmir at all","It required India to return captured territory like Haji Pir without matching gains","It gave Pakistan a formal apology from India","It ended trade relations with Pakistan"], correct:1,
+    explain:"Critics felt India gave up captured ground, such as <b>Haji Pir</b>, without securing equivalent concessions." },
+  { q:"The 1965 anti-Hindi agitation, which Shastri had to manage carefully, was centred in which state?", opts:["West Bengal","Tamil Nadu (Madras State)","Punjab","Assam"], correct:1,
+    explain:"The anti-Hindi agitation of 1965 was centred in <b>Madras State (now Tamil Nadu)</b>." },
+  { q:"What assurance did Shastri give to help defuse the 1965 anti-Hindi agitation?", opts:["That Tamil would become India's national language","That English would continue as an associate official language","That all state exams would be in regional languages only","That Hindi would be dropped entirely"], correct:1,
+    explain:"Shastri assured that <b>English would continue as an associate official language</b> alongside Hindi." },
+  { q:"In which city did Shastri's father work as a clerk in the Revenue Office?", opts:["Varanasi","Lucknow","Allahabad","Kanpur"], correct:2,
+    explain:"Sharada Prasad Srivastava worked as a Revenue Office clerk in <b>Allahabad</b>." },
+  { q:"Roughly how long did Lal Bahadur Shastri serve as Prime Minister in total?", opts:["About 6 months","About 1 year and 7 months","About 3 years","About 5 years"], correct:1,
+    explain:"Shastri served from 9 June 1964 to 11 January 1966 — about <b>1 year and 7 months</b>." },
+  { q:"Which of the following was NOT one of the ministries Shastri held under Nehru at various points?", opts:["Railways","Home Affairs","Defence","Commerce & Industry"], correct:2,
+    explain:"Shastri held Railways, Home Affairs, Transport & Communications, and Commerce & Industry — but never <b>Defence</b>." },
+  { q:"What is the literal meaning of the title 'Shastri', awarded by Kashi Vidyapith?", opts:["Warrior","Scholar","Teacher of the people","Servant of God"], correct:1,
+    explain:"'Shastri' is a traditional title meaning <b>'scholar,'</b> given for proficiency in scriptures and philosophy." },
+  { q:"Which Congress leader's initiative was the Kamaraj Plan, ultimately named after him?", opts:["K. Kamaraj","Morarji Desai","Jagjivan Ram","S. K. Patil"], correct:0,
+    explain:"The plan was proposed by and named after Tamil Nadu Chief Minister <b>K. Kamaraj</b>." }
+];
+
+const QUIZ = [
+  { level: "Round 1 · Easy", questions: ROUND1 },
+  { level: "Round 2 · Medium", questions: ROUND2 },
+  { level: "Round 3 · Hard", questions: ROUND3 },
+  { level: "Round 4 · Extreme", questions: ROUND4 },
+  { level: "Round 5 · Extreme", questions: ROUND5 }
+];
+
+// ---------------- State ----------------
+let currentLevel = 0;
+let currentQ = 0;
+let levelScore = 0;
+let totalScore = 0;
+let levelResults = [];
+let answeredThisQ = false;
+let selectedIdx = null;
+let missedThisLevel = [];
+
+// ---------------- Nav ----------------
+function showView(name){
+  document.getElementById('view-read').classList.toggle('active', name==='read');
+  document.getElementById('view-quiz').classList.toggle('active', name==='quiz');
+  document.getElementById('tab-read').classList.toggle('active', name==='read');
+  document.getElementById('tab-quiz').classList.toggle('active', name==='quiz');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function renderLevelRow(){
+  const row = document.getElementById('level-row');
+  row.innerHTML = '';
+  QUIZ.forEach((lvl, i) => {
+    const done = levelResults[i] !== undefined;
+    const isCurrent = i === levelResults.length && !done;
+    const div = document.createElement('div');
+    div.className = 'level-pill' + (done ? ' done' : '') + (isCurrent ? ' current' : '');
+    div.innerHTML = `<div class="lp-name">${lvl.level.split(' · ')[0]} (${lvl.questions.length}Q)</div>
+                      <div class="lp-status">${done ? levelResults[i]+' / '+lvl.questions.length+' correct' : (isCurrent ? 'Up next' : 'Locked')}</div>`;
+    row.appendChild(div);
+  });
+}
+renderLevelRow();
+
+function startQuiz(){
+  currentLevel = levelResults.length;
+  if(currentLevel >= QUIZ.length){ currentLevel = 0; levelResults = []; totalScore = 0; }
+  beginLevel();
+}
+
+function beginLevel(){
+  currentQ = 0;
+  levelScore = 0;
+  missedThisLevel = [];
+  document.getElementById('quiz-intro').style.display = 'none';
+  document.getElementById('quiz-results').style.display = 'none';
+  document.getElementById('quiz-play').style.display = 'block';
+  document.getElementById('qh-level').textContent = QUIZ[currentLevel].level + ' (' + QUIZ[currentLevel].questions.length + ' questions)';
+  updateScoreLine();
+  renderQuestion();
+}
+
+function updateScoreLine(){
+  document.getElementById('qh-score').textContent = 'Total score: ' + totalScore + ' | This round: ' + levelScore;
+}
+
+function renderQuestion(){
+  answeredThisQ = false;
+  selectedIdx = null;
+  const lvl = QUIZ[currentLevel];
+  const qData = lvl.questions[currentQ];
+  document.getElementById('progress-fill').style.width = (currentQ / lvl.questions.length * 100) + '%';
+
+  const container = document.getElementById('q-container');
+  const letters = ['A','B','C','D'];
+  container.innerHTML = `
+    <div class="q-card">
+      <div class="q-meta">Question ${currentQ+1} of ${lvl.questions.length}</div>
+      <div class="q-text">${qData.q}</div>
+      <div class="options" id="opts">
+        ${qData.opts.map((opt,i) => `
+          <div class="opt" data-idx="${i}" onclick="selectOption(${i})">
+            <span class="opt-letter">${letters[i]}</span>
+            <span>${opt}</span>
+          </div>`).join('')}
+      </div>
+      <div class="explain" id="explain-box"><b>Why:</b> <span id="explain-text"></span></div>
+      <div class="quiz-actions">
+        <button class="primary" id="next-btn" onclick="nextQuestion()" disabled>Check answer</button>
+      </div>
+    </div>
+  `;
+}
+
+function selectOption(i){
+  if(answeredThisQ) return;
+  selectedIdx = i;
+  document.querySelectorAll('.opt').forEach(el => el.classList.remove('selected'));
+  document.querySelector(`.opt[data-idx="${i}"]`).classList.add('selected');
+  document.getElementById('next-btn').disabled = false;
+}
+
+function nextQuestion(){
+  const lvl = QUIZ[currentLevel];
+  const qData = lvl.questions[currentQ];
+  const nextBtn = document.getElementById('next-btn');
+
+  if(!answeredThisQ){
+    answeredThisQ = true;
+    const opts = document.querySelectorAll('.opt');
+    opts.forEach(el => {
+      el.classList.add('disabled');
+      el.onclick = null;
+      const idx = parseInt(el.getAttribute('data-idx'));
+      if(idx === qData.correct) el.classList.add('correct');
+      else if(idx === selectedIdx) el.classList.add('incorrect');
+    });
+    if(selectedIdx === qData.correct){
+      levelScore++; totalScore++;
+    } else {
+      missedThisLevel.push({ q: qData.q, correct: qData.opts[qData.correct], explain: qData.explain });
+    }
+    updateScoreLine();
+    document.getElementById('explain-text').innerHTML = qData.explain;
+    document.getElementById('explain-box').classList.add('show');
+    nextBtn.textContent = (currentQ < lvl.questions.length - 1) ? 'Next question' : 'See round results';
+    nextBtn.disabled = false;
+    return;
+  }
+
+  currentQ++;
+  if(currentQ >= lvl.questions.length){
+    finishLevel();
+  } else {
+    renderQuestion();
+  }
+}
+
+function finishLevel(){
+  document.getElementById('progress-fill').style.width = '100%';
+  levelResults[currentLevel] = levelScore;
+  document.getElementById('quiz-play').style.display = 'none';
+  document.getElementById('quiz-results').style.display = 'block';
+
+  const lvl = QUIZ[currentLevel];
+  document.getElementById('res-round-label').textContent = lvl.level.toUpperCase() + ' COMPLETE';
+  document.getElementById('res-score').textContent = levelScore + ' / ' + lvl.questions.length;
+
+  const pct = levelScore / lvl.questions.length;
+  let verdict = pct === 1 ? "Full marks — sharp recall."
+    : pct >= 0.7 ? "Strong round — a few to revisit below."
+    : pct >= 0.4 ? "Decent effort — worth another read before the next round."
+    : "Re-read that section above before trying again.";
+  document.getElementById('res-verdict').textContent = verdict;
+
+  const actions = document.getElementById('res-actions');
+  actions.innerHTML = '';
+
+  const missedBox = document.getElementById('missed-list');
+  const missedItems = document.getElementById('missed-items');
+  if(missedThisLevel.length > 0){
+    missedItems.innerHTML = missedThisLevel.map(m => `
+      <div class="missed-item"><b>${m.q}</b><br>Correct answer: ${m.correct}. ${m.explain}</div>
+    `).join('');
+    missedBox.classList.add('show');
+  } else {
+    missedBox.classList.remove('show');
+  }
+
+  if(currentLevel < QUIZ.length - 1){
+    const btn = document.createElement('button');
+    btn.className = 'primary';
+    btn.textContent = 'Start ' + QUIZ[currentLevel+1].level.split(' · ')[0] + ' (' + QUIZ[currentLevel+1].questions.length + 'Q)';
+    btn.onclick = () => { currentLevel++; renderLevelRow(); beginLevel(); };
+    actions.appendChild(btn);
+  } else {
+    const totalQuestions = QUIZ.reduce((s,l)=>s+l.questions.length,0);
+    document.getElementById('res-round-label').textContent = 'ALL ROUNDS COMPLETE';
+    document.getElementById('res-score').textContent = totalScore + ' / ' + totalQuestions;
+    const gp = totalScore/totalQuestions;
+    document.getElementById('res-verdict').textContent = gp === 1
+      ? "Perfect score across all 170 questions."
+      : gp >= 0.75 ? "Strong overall grasp of both figures' lives and contributions."
+      : gp >= 0.5 ? "A solid first pass — re-read the harder sections and try again."
+      : "A good start — go back through the Read tab and retake the quiz to push your score up.";
+
+    const retryBtn = document.createElement('button');
+    retryBtn.className = 'primary';
+    retryBtn.textContent = 'Restart from Round 1';
+    retryBtn.onclick = () => {
+      currentLevel = 0; levelResults = []; totalScore = 0;
+      renderLevelRow();
+      document.getElementById('quiz-results').style.display = 'none';
+      document.getElementById('quiz-intro').style.display = 'block';
+    };
+    actions.appendChild(retryBtn);
+  }
+
+  const readBtn = document.createElement('button');
+  readBtn.className = 'ghost';
+  readBtn.textContent = 'Back to reading';
+  readBtn.onclick = () => showView('read');
+  actions.appendChild(readBtn);
+
+  renderLevelRow();
+}
+</script>
+
+</body>
+</html>
