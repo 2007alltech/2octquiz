@@ -1000,6 +1000,23 @@ function clearProgress(){
   try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
 }
 
+// Called the moment a round is finished. Saves a clean "ready for the next
+// round" position (question 0, score 0) rather than the just-finished round's
+// out-of-range currentQ — that stale value was crashing the resume screen.
+function saveProgressAfterLevel(){
+  try{
+    const nextLevel = levelResults.length; // index of the next not-yet-completed round
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      currentLevel: nextLevel < QUIZ.length ? nextLevel : currentLevel,
+      currentQ: 0,
+      levelScore: 0,
+      totalScore,
+      levelResults,
+      missedThisLevel: []
+    }));
+  }catch(e){ /* storage unavailable — quiz still works, just won't resume later */ }
+}
+
 // ---------------- Nav ----------------
 function showView(name){
   document.getElementById('view-read').classList.toggle('active', name==='read');
@@ -1101,9 +1118,17 @@ function updateScoreLine(){
 }
 
 function renderQuestion(){
+  const lvl = QUIZ[currentLevel];
+  if(!lvl || currentQ >= lvl.questions.length){
+    // Defensive fallback: an out-of-range position (e.g. from an old saved
+    // state) should never render a blank screen — recover into the round's
+    // results instead.
+    if(lvl) finishLevel();
+    else { clearProgress(); showView('quiz'); document.getElementById('quiz-intro').style.display = 'block'; document.getElementById('quiz-play').style.display = 'none'; initApp(); }
+    return;
+  }
   answeredThisQ = false;
   selectedIdx = null;
-  const lvl = QUIZ[currentLevel];
   const qData = lvl.questions[currentQ];
   document.getElementById('progress-fill').style.width = (currentQ / lvl.questions.length * 100) + '%';
 
@@ -1176,7 +1201,7 @@ function nextQuestion(){
 function finishLevel(){
   document.getElementById('progress-fill').style.width = '100%';
   levelResults[currentLevel] = levelScore;
-  saveProgress();
+  saveProgressAfterLevel();
   document.getElementById('quiz-play').style.display = 'none';
   document.getElementById('quiz-results').style.display = 'block';
 
